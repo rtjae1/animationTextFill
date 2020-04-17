@@ -1,6 +1,63 @@
+/* ~~~~~~~~~~~~~~ */
+/* color variables */
+/* ~~~~~~~~~~~~~~ */
 :root {
+  --primaryColor: #444444;
+  --secondaryColor: #ffdd67;
+  --tertiaryColor: #535945;
   --jazz1: #2a7e90;
   --jazz2: #165120;
   --jazz3: #031138;
   --jazz4: #013c40;
+  --rainbow: linear-gradient(-45deg, red, orange, yellow, green, blue, indigo, violet);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.content h1 {
+  position: relative;
+  font-size: 8em;
+  color: var(--secondaryColor);
+  border-bottom: 16px solid;
+  letter-spacing: 0.05em;
+  line-height: 1.2em;
+}
+
+.content h1::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: 100%; */
+  color: var(--jazz1);
+  overflow: hidden;
+  border-bottom: 16px solid;
+  animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
 }
